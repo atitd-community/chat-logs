@@ -13,9 +13,13 @@ Route::get('system/{timestamp}', function(Request $request, $timestamp) {
 
     $return = [];
 
+    $i = 0;
+
     foreach($raw as $key => $value) {
-        $return[$value->index_id]['message'] = $value->full_message;
-        $return[$value->index_id]['timestamp'] = (new Carbon($value->msg_date))->timestamp;
+        $return[$i]['message'] = $value->full_message;
+        $return[$i]['timestamp'] = (new Carbon($value->msg_date))->timestamp;
+
+        $i++;
     }
 
     return $return;

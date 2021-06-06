@@ -15,7 +15,7 @@ Route::get('system/{timestamp}', function(Request $request, $timestamp) {
 
     $i = 0;
 
-    foreach($raw as $key => $value) {
+    foreach($raw as $value) {
         $return[$i]['message'] = $value->full_message;
         $return[$i]['timestamp'] = (new Carbon($value->msg_date))->timestamp;
 

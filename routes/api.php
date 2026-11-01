@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 Route::get('system/{timestamp}', function(Request $request, $timestamp) {
-    $raw = ChatLog::where('game_name', 'ATITD10A')
+    $raw = ChatLog::where('game_name', 'ATITD11A')
                   ->where('channel_name', 'System')
                   ->where('msg_date', '>', gmdate("Y-m-d H:i:s", $timestamp))
                   ->get();
